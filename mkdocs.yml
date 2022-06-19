@@ -1,0 +1,29 @@
+site_name: beezy.sh 
+theme:
+  icon:
+    repo: fontawesome/brands/github
+  name: material
+  palette: 
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate 
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+extra:
+  social:
+    - icon: fontawesome/brands/github 
+      link: https://github.com/beezy-sh/refactored-lamp
+  generator: false
+copyright: Copyright &copy; 2022 beezy.sh - Licensed under the Apache-2.0 License
+repo_url: https://github.com/beezy-sh/refactored-lamp
+repo_name: beezy-sh/refactored-lamp
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
