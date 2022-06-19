@@ -1,5 +1,6 @@
-# The Intrepid Squirrel is Out! 
 **Source: [Ondat.io](https://www.ondat.io/blog/the-intrepid-squirrel-is-out) - Date: 8/12/2021 - Author: Romuald Vandepoel**
+
+![cat&squirrel](/images/the_intrepid_squirrel_is_out.png)
 
 The Marketing and Product teams gave me a unique opportunity to write a blog post about the General Availability of Ondat 2.5. This is quite an honor and I will use it to raise my case regarding the usage of cool code names!
 
@@ -23,7 +24,7 @@ Always good to have some preflight checks before having the "hum!" moment:
 
 kubectl storageos preflight
 
-Screenshot 2021-12-08 at 18.46.26
+![screenshot](/images/the_intrepid_screenshot.png)
 
 What about deploying a self-evaluation or test environment with one easy command:
 
