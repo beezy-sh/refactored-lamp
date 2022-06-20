@@ -31,7 +31,7 @@ What about deploying a self-evaluation or test environment with one easy command
 kubectl storageos install --include-etcd --admin-username rom --admin-password mysecretpassword
 namespace/storageos-etcd created
 
-```
+```shell
 kubectl get pod -n storageos-etcd
 NAME READY STATUS RESTARTS AGE
 storageos-etcd-0-qcq8h 1/1 Running 0 2m3s
@@ -64,7 +64,7 @@ Also with some clever optimizations, our Intrepid Squirrel got faster, way faste
 
 Let's verify the available regions, create a PVC, scale the number of replicas to 2 (1 primary volume + 2 replicas = 3 zones), then check where are the volume and its replicas placed, hopefully in different availability zones:
 
-```
+```shell
 kubectl get node -ojson |jq '.items[].metadata.labels'|grep "topology.kubernetes.io/zone"
 "topology.kubernetes.io/zone": "us-central1-f"
 "topology.kubernetes.io/zone": "us-central1-f"
@@ -72,8 +72,9 @@ kubectl get node -ojson |jq '.items[].metadata.labels'|grep "topology.kubernetes
 "topology.kubernetes.io/zone": "us-central1-c"
 "topology.kubernetes.io/zone": "us-central1-a"
 "topology.kubernetes.io/zone": "us-central1-a"
+```
 
-cat pvc.yaml
+```yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -88,7 +89,9 @@ accessModes:
 resources:
 requests:
 storage: 5Gi
+``` 
 
+```shell
 kubectl apply -f pvc.yaml
 persistentvolumeclaim/pvc-tap created
 
@@ -119,6 +122,7 @@ Type Reason Age From Message
 Normal Provisioning 19s csi.storageos.com_storageos-csi-helper-65dc8ff9d8-hmz4q_e65aa0d3-0541-4901-9e07-5898677577b1 External provisioner is provisioning volume for claim "default/pvc-tap"
 Normal ExternalProvisioning 19s persistentvolume-controller waiting for a volume to be created, either by external provisioner "csi.storageos.com" or manually created by system administrator
 Normal ProvisioningSucceeded 18s csi.storageos.com_storageos-csi-helper-65dc8ff9d8-hmz4q_e65aa0d3-0541-4901-9e07-5898677577b1 Successfully provisioned volume pvc-03b55134-95b1-4609-a07b-3f73f115d0a3
+
 
 kubectl describe pv pvc-03b55134-95b1-4609-a07b-3f73f115d0a3
 Name: pvc-03b55134-95b1-4609-a07b-3f73f115d0a3

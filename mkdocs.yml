@@ -23,6 +23,7 @@ repo_url: https://github.com/beezy-sh/refactored-lamp
 repo_name: beezy-sh/refactored-lamp
 
 markdown_extensions:
+  - def_list
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

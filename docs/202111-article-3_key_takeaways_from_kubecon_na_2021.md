@@ -26,15 +26,17 @@ No wonder why every single person that I met at KubeCon discussed observability.
 
 The first-class citizens of Kubernetes are the applications! To support that statement, there is a need to give more love to the overall workload lifecycle and it can take a different approach but it should be simple as A, B, C.
 
-A. Application definitions are multiplying based on the specifics of the infrastructure, CI/CD, or GitOps choices not even mentioning everything related to monitoring, audit, and compliance requirements.
-
+`A`
+: Application definitions are multiplying based on the specifics of the infrastructure, CI/CD, or GitOps choices not even mentioning everything related to monitoring, audit, and compliance requirements.  
 Would it not be fantastic to have a universal application definition that would be agnostic of all the above? I present you AppOps with Shipa! No matter if you're using Pulumi, Terraform, Argo, or Flux, Shipa provides you with a common framework definition for your Applications addressing any of your preferred tooling and moving from one to another based on your organization needs and platform choices. Sweet!
 
-B. Some of my projects had to deal with thousands of applications having up to 10 different versions in the registry. This can quickly become an unforeseen cost both from registry and worker node storage perspective.
-
+`B` 
+: Some of my projects had to deal with thousands of applications having up to 10 different versions in the registry. This can quickly become an unforeseen cost both from registry and worker node storage perspective.   
 Well, the container image fitness coach is in town at a new place called Slim.ai! If you dream of reducing your corporate container images from 1.5GB to 140MB while still preserving an enterprise lifecycle, adding container internals auditing, and optimizing and minifying the footprint, this is the place to go!
 
-C. How to receive love from your CISO? Introducing new ways of working, deploying, and managing the lifecycle of business-critical applications is not easy for everyone and especially for CISO. In fact, while it took a great amount of time to build governance and compliance within the "old" world, the "new" one is shaking the tree quite hard in terms of... actually everything due to a massive shift left.
+`C` 
+: How to receive love from your CISO? Introducing new ways of working, deploying, and managing the lifecycle of business-critical applications is not easy for everyone and especially for CISO.   
+In fact, while it took a great amount of time to build governance and compliance within the "old" world, the "new" one is shaking the tree quite hard in terms of... actually everything due to a massive shift left.
 
 ![kubeconna01](/images/kubecon_na_2022_02.jpg)
 
