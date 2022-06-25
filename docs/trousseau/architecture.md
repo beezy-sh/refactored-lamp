@@ -78,7 +78,7 @@ Trousseau aims to provide support for multiple KMS providers. As per version 1.1
 
 ## Architecture Diagram
 
-![trousseau diagram](/images/trousseau-diagram.png)
+<!-- ![trousseau diagram](/images/trousseau-diagram.png) -->
 
 ```mermaid
 graph LR
@@ -136,7 +136,8 @@ autonumber
   trousseau->>vault: Recover Trousseau ConfigMap config
   vault->>trousseau: Inject Transit Engine Key config
   loop Healthcheck
-      trousseau->>vault: validate Vault connection
+      trousseau->>vault: check Vault connection
+      vault->>trousseau: report Vault connection
   end
 ```
 
