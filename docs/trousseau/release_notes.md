@@ -1,7 +1,7 @@
 !!! tip 
     For the latest and greatest news about Trousseau's releases, please consult [GitHub Releases](https://github.com/ondat/trousseau/releases).
 
-## Trousseau v1
+## **Trousseau v1** 
 
 ### Fortune Cookie - v1.1.3
 
