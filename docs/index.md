@@ -4,9 +4,9 @@
 
 ### Discoblocks
 
-| Status | Reference(s) | Website | Social(s) | Repo |
-|--------|--------------|---------|-----------|------|
-| Alpha  | :material-note-remove: | [discoblocks.io](https://discoblocks.io) | [:material-linkedin:](https://www.linkedin.com/company/discoblocks-io) | [:material-github:](https://github.com/ondat/discoblocks) | 
+| Logo | Status | Reference(s) | Website | Social(s) | Repo |
+|------|--------|--------------|---------|-----------|------|
+| ![](/images/discoblocks-logo.png){ width="100" } | Alpha  | :material-note-remove: | [discoblocks.io](https://discoblocks.io) | [:material-linkedin:](https://www.linkedin.com/company/discoblocks-io) | [:material-github:](https://github.com/ondat/discoblocks) | 
 
 !!! summary
     Discoblocks is an open-source declarative disk configuration system for Kubernetes helping to automate CRUD (Create, Read, Update, Delete) operations for cloud disk device resources attached to Kubernetes cluster nodes.
@@ -42,9 +42,9 @@
 
 ### Trousseau
 
-| Status | Reference(s) | Website | Social(s) | Repo |
-|--------|--------------|---------|-----------|------|
-| Prod  | [:material-note-check:](https://finance.yahoo.com/news/trousseau-open-source-project-made-141300025.html)| [trousseau.io](https://trousseau.io) | [:material-linkedin:](https://www.linkedin.com/company/trousseau-io) [:material-twitter:](https://twitter.com/trousseauio) | [:material-github:](https://github.com/ondat/trousseau) | 
+| Logo | Status | Reference(s) | Website | Social(s) | Repo |
+|------|--------|--------------|---------|-----------|------|
+| ![](/images/trousseau-logo.png){ width="100" }  | Prod  | [:material-note-check:](https://finance.yahoo.com/news/trousseau-open-source-project-made-141300025.html)| [trousseau.io](https://trousseau.io) | [:material-linkedin:](https://www.linkedin.com/company/trousseau-io) [:material-twitter:](https://twitter.com/trousseauio) | [:material-github:](https://github.com/ondat/trousseau) | 
 
 !!! summary
     Trousseau is an open-source project, based on [Kubernetes KMS provider design](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/). It is designed to be a framework for any KMS provider (see release notes).

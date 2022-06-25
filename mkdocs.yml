@@ -57,8 +57,8 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 
 nav:
-  - Introduction: 'index.md'
-  - Contributing: 'contribution.md'
+  - Projects: 'index.md'
+  - Contributing: 'contributing.md'
   - Discoblocks: 
     - The Intrepid Squirrel is Out!: '202112-article-the_intrepid_squirrel_is_out.md'
     - 3 Key Takeaways from KubeCon NA 2021: '202111-article-3_key_takeaways_from_kubecon_na_2021.md'
