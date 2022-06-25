@@ -6,6 +6,7 @@ theme:
     code: Red Hat Mono
   logo: images/ondat_logo_darkbg.webp
   features:
+    - content.code.annotate
     - navigation.top
   icon:
     repo: fontawesome/brands/github
