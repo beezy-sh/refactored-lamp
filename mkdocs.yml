@@ -12,7 +12,7 @@ theme:
   name: material
   palette: 
     - scheme: default
-      primary: black 
+      primary: white 
       accent: blue 
       toggle:
         icon: material/lightbulb-outline
@@ -60,11 +60,16 @@ nav:
   - Projects: 'index.md'
   - Contributing: 'contributing.md'
   - Discoblocks: 
-    - The Intrepid Squirrel is Out!: '202112-article-the_intrepid_squirrel_is_out.md'
-    - 3 Key Takeaways from KubeCon NA 2021: '202111-article-3_key_takeaways_from_kubecon_na_2021.md'
     - Documentation:
-      - The Intrepid Squirrel is Out!: '202112-article-the_intrepid_squirrel_is_out.md'
-      - 3 Key Takeaways from KubeCon NA 2021: '202111-article-3_key_takeaways_from_kubecon_na_2021.md'
+      - Release Notes: 'discoblocks/release_notes.md'
+      - Architecture: 'discoblocks/architecture.md'
+      - Deployment: 'discoblocks/deployment.md'
+      - Operations: 'discoblocks/operations.md'
+      - Support: 'discoblockss/support.md'
+#    - Posts:
+    - Community:
+      - A Kubernetes ZeroTrust Model using a KMS Provider Plugin: 'discoblockss/202206-presentation-hashiconf_europe.md'
+      - How to Solve Kubernetes Secrets Conundrum : 'discoblockss/202206-presentation-hashicorp_user_group.md'
   - Trousseau: 
     - Documentation:
       - Release Notes: 'trousseau/release_notes.md'
@@ -74,5 +79,5 @@ nav:
       - Support: 'trousseau/support.md'
 #    - Posts:
     - Community:
-      - A Kubernetes ZeroTrust Model using a KMS Provider Plugin: '202206-presentation-hashiconf_europe.md'
-      - How to Solve Kubernetes Secrets Conundrum : '202206-presentation-hashicorp_user_group.md'
+      - A Kubernetes ZeroTrust Model using a KMS Provider Plugin: 'trousseau/202206-presentation-hashiconf_europe.md'
+      - How to Solve Kubernetes Secrets Conundrum : 'trousseau/202206-presentation-hashicorp_user_group.md'
