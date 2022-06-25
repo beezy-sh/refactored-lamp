@@ -480,11 +480,11 @@ spec:
           effect: NoExecute
 ```
 
-1. :material-information: update the version to the desired version.
-2. :material-information: set the Vault endpoint URL up.
-3. :material-information: update the version to the desired version.
-4. :material-information: uncomment with Vault Enterprise and set a namespace in `value` parameter.
-5. :material-information: set to false in production with signed TLS certificate.  
+1. :material-information: update the version to the desired version
+2. :material-information: set the Vault endpoint URL up
+3. :material-information: update the version to the desired version
+4. :material-information: uncomment with Vault Enterprise and set a namespace in `value` parameter
+5. :material-information: set to false in production with signed TLS certificate  
 
 ## Enable KMS Provider Plugin
 
