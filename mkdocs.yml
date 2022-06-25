@@ -43,6 +43,10 @@ repo_url: https://github.com/beezy-sh/refactored-lamp
 repo_name: beezy-sh/refactored-lamp
 
 markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - admonition
   - pymdownx.details
   - def_list
