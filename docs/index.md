@@ -4,7 +4,9 @@
 
 ### Discoblocks
 
-Status: alpha stage
+| Status | Website | Social(s) | Repo |
+|--------|---------|--------|------|
+| alpha  | [discoblocks.io](https://discoblocks.io) | [:material-linkedin:](https://www.linkedin.com/company/discoblocks-io) | [:material-github:](https://github.com/ondat/discoblocks) | 
 
 !!! summary
     Discoblocks is an open-source declarative disk configuration system for Kubernetes helping to automate CRUD (Create, Read, Update, Delete) operations for cloud disk device resources attached to Kubernetes cluster nodes.
@@ -39,6 +41,10 @@ Status: alpha stage
     An application could be using Discoblocks to get persistent storage but this option would not be safe for production as there will not be any data platform management to address high availability, replication, fencing, and encryption.
 
 ### Trousseau
+
+| Status | Website | Social(s) | Repo |
+|--------|---------|--------|------|
+| production  | [trousseau.io](https://trousseau.io) | [:material-linkedin:](https://www.linkedin.com/company/trousseau-io) [:material-twitter:](https://twitter.com/trousseauio) | [:material-github:](https://github.com/ondat/trousseau) | 
 
 Status: production-grade with customer reference
 
