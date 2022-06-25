@@ -3,9 +3,8 @@
 
 ## **Trousseau v1** 
 
-### Fortune Cookie - v1.1.3
-
-!!! note "Release notes"
+### Fortune Cookie
+!!! note "Release notes - v1.1.3"
     This minor version is a code cleaning and polishing release including:  
     Updating the logging system to provide richer insights during normal operations and when reporting failures  
 
@@ -29,9 +28,8 @@
     ghcr.io/ondat/trousseau:v1.1.3
     ```
 
-### Wafer Cookie - v1.1.2
-
-!!! note "Release notes"
+### Wafer Cookie
+!!! note "Release notes - v1.1.2"
     This minor version is a code cleaning and polishing release including:  
     - a fix for CVE-2021-38561  
     - an end-2-end workflow review 
@@ -56,8 +54,8 @@
     ghcr.io/ondat/trousseau:v1.1.2
     ```
 
-### Bad Batch Cookie - v1.1.1 
-!!! danger
+### Bad Batch Cookie 
+!!! danger "Release notes - v1.1.1"
     The release has been removed as part of a discovered CVE.   
     Code change has been addressed in v1.1.2 and container registry has been cleaned up.    
 
@@ -65,8 +63,8 @@
 
     [Git Compare with previous version](https://github.com/ondat/trousseau/compare/v1.1.0...v1.1.1)
 
-### Chocolate Chip Funny Cookie - v1.1.0 
-!!! note "Release notes"
+### Chocolate Chip Funny Cookie 
+!!! note "Release notes - v1.1.0"
     We are please to release the first update of version 1.0.0 adding chocolate chips on the original 'Funny Cookie'.   
 
     **Thanks to @mhmxs @hubvu @vfiftyfive and @cannischan for your contributions!**
@@ -93,9 +91,8 @@
     ghcr.io/ondat/trousseau:v1.1.2
     ```
 
-### Funny Cookie - v1.0.0
-
-!!! note "Release notes"
+### Funny Cookie
+!!! note "Release notes - v1.0.0"
     Funny Cookie' is out of the box!   
     We are please to release the very first version of Trousseau this December 1st 2021!  
     Trousseau is a Kubernetes KMS Provider plugin with support of Hashicorp Vault.   
