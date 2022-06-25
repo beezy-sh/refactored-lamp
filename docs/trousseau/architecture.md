@@ -3,7 +3,7 @@
 ### Terminology & Concepts
 #### What is a Kubernetes Secrets
 
-!!! info "Extract from [kubernetes.io](https://kubernetes.io/docs/concepts/configuration/secret/) about Secrets"
+!!! info "Extract from [kubernetes.io](https://kubernetes.io/docs/concepts/configuration/secret/)"
     A Secret is an object that contains a small amount of sensitive data such as a password, a token, or a key. Such information might otherwise be put in a Pod specification or in a container image. Using a Secret means that you don't need to include confidential data in your application code.
 
     Because Secrets can be created independently of the Pods that use them, there is less risk of the Secret (and its data) being exposed during the workflow of creating, viewing, and editing Pods. Kubernetes, and applications that run in your cluster, can also take additional precautions with Secrets, such as avoiding writing confidential data to nonvolatile storage.
@@ -50,14 +50,14 @@ Trousseau is built against the following principles:
 
 Starting with [version 1.1.0](https://github.com/ondat/trousseau/tree/v1.1.0), Trousseau introduced a Zero trust security model addressing 5 out 6 [key principles](https://en.wikipedia.org/wiki/Zero_trust_security_model#Principles_and_Definitions):
 
-| # | Principle | Trousseau | 
-|---|-----------|-----------|
-| ✅ | single strong source of user identity | integrate with a remote KMS |
-| ✅ | user authentication | support separation of duties |
-| ✅ | machine authentication | Kubernetes ServiceAccount & KMS Kubernetes Auth method|
-|  | additional context check, such as policy compliance and device health | [a GitHub issues](https://github.com/ondat/trousseau/issues/48)|
-| ✅ | authorization policies to access an application | KMS policy & role | 
-| ✅ | access control policies within an application | dedicated token recovered via ConfigMap |
+| Principle | Trousseau | Status |
+|-----------|-----------|--------|
+| single strong source of user identity | integrate with a remote KMS | :material-check-all: |
+| user authentication | support separation of duties | :material-check-all: |
+| machine authentication | Kubernetes ServiceAccount & KMS Kubernetes Auth method| :material-check-all: |
+| additional context check, such as policy compliance and device health | [a GitHub issues](https://github.com/ondat/trousseau/issues/48)| :material-check: |
+| authorization policies to access an application | KMS policy & role | :material-check-all: | 
+| access control policies within an application | dedicated token recovered via ConfigMap | :material-check-all: |
 
 ### Develop in Golang
 The development language has been chosen based on the ecosystem in which Kubernetes resources are developped. 
@@ -73,17 +73,42 @@ Trousseau aims to provide support for multiple KMS providers. As per version 1.1
 
 | KMS Provider | Version | Status | 
 |--------------|---------|--------|
-| HashiCorp Vault (Community & Enterprise) | 1.9.3 | ✅ |
-| HashiCorp Cloud Vault Enterprise | n/a | ✅ |
+| HashiCorp Vault (Community & Enterprise) | 1.x | :material-check-all: |
+| HashiCorp Cloud Vault Enterprise | n/a | :material-check-all: |
 
 ## Architecture Diagram
 
 ![trousseau diagram](/images/trousseau-diagram.png)
 
+```mermaid
+graph LR
+  A(user) --> B[secret.yml];
+  B --1--> C(kube-api);
+  C --2--> D(Trousseau);
+  D --3--> E(Vault);
+  E --4--> D;
+  D --5--> C;
+  C --6--> F(etcd);
+
+  subgraph k8s
+    C
+    D
+    F
+  end
+```
+
+1. Create a secret
+2. kube-api calls Trousseau
+3. Trousseau sends the encryption request to the KMS provider
+4. The KMS provider returne the encrypted data to Trousseau
+5. Trousseau sends the encrypted data back to kube-api
+6. kube-api stores the encrypted resource in etcd
+
+
 ## Workflow 
 
 ### Kubernetes & Vault Configuration
-``` mermaid
+```mermaid
 sequenceDiagram
 participant k8s
 participant vault
@@ -99,7 +124,7 @@ autonumber
 ```
 
 ### Trousseau Deployment 
-``` mermaid
+```mermaid
 sequenceDiagram
 participant k8s
 participant trousseau
@@ -114,8 +139,9 @@ autonumber
       trousseau->>vault: validate Vault connection
   end
 ```
+
 ### Trousseau Operations
-``` mermaid
+```mermaid
 sequenceDiagram
 participant k8s
 participant trousseau
@@ -132,7 +158,7 @@ autonumber
 ```
 
 ### Vault Token Renewal
-``` mermaid
+```mermaid
 sequenceDiagram
 participant k8s
 participant trousseau
