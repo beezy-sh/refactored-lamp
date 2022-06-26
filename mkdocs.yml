@@ -67,18 +67,11 @@ nav:
       - Architecture: 'discoblocks/architecture.md'
       - Deployment: 'discoblocks/deployment.md'
       - Operations: 'discoblocks/operations.md'
-
-#    - Posts:
-    - Community:
-      - A Kubernetes ZeroTrust Model using a KMS Provider Plugin: 'discoblockss/202206-presentation-hashiconf_europe.md'
-      - How to Solve Kubernetes Secrets Conundrum : 'discoblockss/202206-presentation-hashicorp_user_group.md'
+    - Community & Media: 'discoblocks/community.md'
   - Trousseau: 
     - Documentation:
       - Release Notes: 'trousseau/release_notes.md'
       - Architecture: 'trousseau/architecture.md'
       - Deployment: 'trousseau/deployment.md'
       - Operations: 'trousseau/operations.md'
-#    - Posts:
-    - Community:
-      - A Kubernetes ZeroTrust Model using a KMS Provider Plugin: 'trousseau/202206-presentation-hashiconf_europe.md'
-      - How to Solve Kubernetes Secrets Conundrum : 'trousseau/202206-presentation-hashicorp_user_group.md'
+    - Community & Media: 'trousseau/community.md'
