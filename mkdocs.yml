@@ -60,13 +60,14 @@ markdown_extensions:
 nav:
   - Projects: 'index.md'
   - Contributing: 'contributing.md'
+  - Support: 'support.md'
   - Discoblocks: 
     - Documentation:
       - Release Notes: 'discoblocks/release_notes.md'
       - Architecture: 'discoblocks/architecture.md'
       - Deployment: 'discoblocks/deployment.md'
       - Operations: 'discoblocks/operations.md'
-      - Support: 'discoblockss/support.md'
+
 #    - Posts:
     - Community:
       - A Kubernetes ZeroTrust Model using a KMS Provider Plugin: 'discoblockss/202206-presentation-hashiconf_europe.md'
@@ -77,7 +78,6 @@ nav:
       - Architecture: 'trousseau/architecture.md'
       - Deployment: 'trousseau/deployment.md'
       - Operations: 'trousseau/operations.md'
-      - Support: 'trousseau/support.md'
 #    - Posts:
     - Community:
       - A Kubernetes ZeroTrust Model using a KMS Provider Plugin: 'trousseau/202206-presentation-hashiconf_europe.md'
