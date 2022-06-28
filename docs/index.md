@@ -1,7 +1,5 @@
 # Open Source Software at Ondat
 
-## Curent Open Source Projects
-
 ### Discoblocks
 
 | Logo | Status | Reference(s) | Website | Social(s) | Repo |
