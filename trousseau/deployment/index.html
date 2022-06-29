@@ -1,0 +1,1879 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://beezy.sh/trousseau/deployment/">
+      
+      
+        
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8+insiders-4.19.1">
+    
+    
+      
+        <title>Deployment - open.ondat.io</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.485cfce5.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Red+Hat+Text:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Red Hat Text";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="open.ondat.io" class="md-header__button md-logo" aria-label="open.ondat.io" data-md-component="logo">
+      
+  <img src="../../images/ondat_logo_darkbg.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            open.ondat.io
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deployment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/beezy-sh/refactored-lamp" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    beezy-sh/refactored-lamp
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="open.ondat.io" class="md-nav__button md-logo" aria-label="open.ondat.io" data-md-component="logo">
+      
+  <img src="../../images/ondat_logo_darkbg.png" alt="logo">
+
+    </a>
+    open.ondat.io
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/beezy-sh/refactored-lamp" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    beezy-sh/refactored-lamp
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        
+        
+          <label class="md-nav__link" for="__nav_4">
+            
+  
+  <span class="md-ellipsis">
+    Discoblocks
+  </span>
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" aria-label="Discoblocks" data-md-level="1">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Discoblocks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+        
+        
+          <label class="md-nav__link" for="__nav_4_1">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" aria-label="Documentation" data-md-level="2">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discoblocks/release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
+  </span>
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discoblocks/architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discoblocks/deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deployment
+  </span>
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discoblocks/operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operations
+  </span>
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discoblocks/community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community & Media
+  </span>
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+
+
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        
+        
+          <label class="md-nav__link" for="__nav_5">
+            
+  
+  <span class="md-ellipsis">
+    Trousseau
+  </span>
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" aria-label="Trousseau" data-md-level="1">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Trousseau
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" checked>
+        
+        
+          <label class="md-nav__link" for="__nav_5_1">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" aria-label="Documentation" data-md-level="2">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
+  </span>
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Deployment
+  </span>
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Deployment
+  </span>
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-deployment-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-deployment Secret
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-deployment Secret">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testdev-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test/Dev environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disconnected-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disconnected requirements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-a-devtest-hashicorp-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup a dev/test HashiCorp Vault
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-trousseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy Trousseau
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploy Trousseau">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-serviceaccount" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes ServiceAccount
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-vault-kubernetes-auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Vault Kubernetes Auth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-vault-transit-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Vault Transit engine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vault-agent-configmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vault Agent ConfigMap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trousseau-daemonset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trousseau DaemonSet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-kms-provider-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable KMS Provider Plugin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable KMS Provider Plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encryptionconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      EncryptionConfiguration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rke-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      RKE 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-trousseau-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify Trousseau deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replace-existing-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replace existing Secrets
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operations
+  </span>
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community & Media
+  </span>
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-deployment-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-deployment Secret
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-deployment Secret">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testdev-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test/Dev environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disconnected-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disconnected requirements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-a-devtest-hashicorp-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup a dev/test HashiCorp Vault
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-trousseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy Trousseau
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploy Trousseau">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-serviceaccount" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes ServiceAccount
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-vault-kubernetes-auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Vault Kubernetes Auth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-vault-transit-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Vault Transit engine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vault-agent-configmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vault Agent ConfigMap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trousseau-daemonset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trousseau DaemonSet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-kms-provider-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable KMS Provider Plugin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable KMS Provider Plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encryptionconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      EncryptionConfiguration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rke-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      RKE 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-trousseau-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify Trousseau deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replace-existing-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replace existing Secrets
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/beezy-sh/refactored-lamp/edit/master/docs/trousseau/deployment.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+  <h1>Deployment</h1>
+
+<h2 id="overview">Overview</h2>
+<p>Trousseau installation deploys and maintains its component as container using native Kubernetes API and mechanism along with the standard KMS (Key Management Service) tooling.   </p>
+<p>In production-grade environment, a <em>separation of duties</em> will most likely be in place dividing the work between a DevOps team in charge of the Kubernetes side while a Security team will be in charge of the KMS one. The installation guide will mention who is doing what with <strong><em>Platform team</em></strong> and <strong><em>Security team</em></strong> mark. </p>
+<p>The following workflow shows the installation steps and owners:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Activity</th>
+<th>Responsible Team</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="#create-a-kubernetes-serviceaccount-kubernetes-admins">Create a Kubernetes ServicesAccount</a></td>
+<td><strong><em>Platform Team</em></strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="#hashicorp-vault-kubernetes-authentication--transit-engine-kubernetes-admins--security-admins">HashiCorp Vault Kubernetes Authentication &amp; Transit engine</a></td>
+<td><strong><em>Platform Team</em></strong> <br> <strong><em>Security Team</em></strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="#create-a-trousseau-kubernetes-configmap-kubernetes-admins">Create a Trousseau Kubernetes ConfigMap</a></td>
+<td><strong><em>Platform Team</em></strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="#deploy-trousseau-daemonset-kubernetes-admins">Deploy the Trousseau DaemonSet</a></td>
+<td><strong><em>Platform Team</em></strong></td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="#enable-trousseau-kms-provider-in-kube-apiserver-kubernetes-admins">Enable Trousseau KMS provider in <code>kube-apiserver</code></a></td>
+<td><strong><em>Platform Team</em></strong></td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="#create-and-verify-secret-encryption-with-trousseau-and-hashicorp-vault-kubernetes-admins">Create and verify Secret encryption with Trousseau and HashiCorp Vault</a></td>
+<td><strong><em>Platform Team</em></strong></td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="#replace-existing-kubernetes-secrets-with-encrypted-ones-using-trousseau-kubernetes-admins">Replace existing Kubernetes secrets with encrypted ones using Trousseau</a></td>
+<td><strong><em>Platform Team</em></strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="requirements">Requirements</h2>
+<p>The following are required:  </p>
+<ul>
+<li>a HashiCorp Vault instance (Community or Enterprise)</li>
+<li>a HashiCorp Vault token</li>
+<li>a SSH access to the control plane nodes as with root permissions</li>
+<li>an internet access or follow the disconnected requirements</li>
+<li><code>kubectl</code> CLI on an bastion host with access to Kubernetes</li>
+<li><code>vault</code> CLI an bastion host with access to the HashiCorp Vault instance</li>
+</ul>
+<h2 id="pre-deployment-secret">Pre-deployment Secret</h2>
+<p>Create a secret to verify Trousseau's deployment
+<div class="highlight"><pre><span></span><code>kubectl create secret generic secret-pre-deploy -n default --from-literal=mykey=mydata
+</code></pre></div></p>
+<h3 id="testdev-environment">Test/Dev environment</h3>
+<ul>
+<li>a working Kubernetes cluster with 1 control plane node &amp; 1 worker node</li>
+<li>a dev/test HashiCorp Vault Community</li>
+<li>deployed within a Kubernetes (different as Trousseau to avoid a death dependency circle) </li>
+<li>outside of Kubernetes as a virtual machine or a <a href="https://cloud.hashicorp.com/">cloud instances</a></li>
+</ul>
+<h3 id="production-environment">Production environment</h3>
+<ul>
+<li>a working Kubernetes cluster with 3 control plane nodes &amp; 1 worker node</li>
+<li>a production-grade HashiCorp Vault Enterprise deployment </li>
+</ul>
+<h3 id="disconnected-requirements">Disconnected requirements</h3>
+<p>Performing a disconnected deployment, the container image will need to be mirrored within the organization container registry. Here is an example using a Google Cloud Platform private container registry:</p>
+<div class="highlight"><pre><span></span><code>docker pull ghcr.io/ondat/trousseau:v1.1.3
+docker pull vault:1.9.4
+docker tag ghcr.io/ondat/trousseau:v1.1.3 us-central1-docker.pkg.dev/shaped-complex-318513/ondat/trousseau:v1.1.3
+docker tag vault:1.9.4 us-central1-docker.pkg.dev/shaped-complex-318513/vault/vault:1.9.4
+docker push us-central1-docker.pkg.dev/shaped-complex-318513/ondat/trousseau:v1.1.3
+docker push us-central1-docker.pkg.dev/shaped-complex-318513/vault/vault:1.9.4
+</code></pre></div>
+<p>During the installation steps, a DaemonSet will be used to deploy Trousseau on Kubernetes. Along with other parameters, the DaemonSet defines what container images are required and where to get them via the paramters <code>image:</code>. </p>
+<p>Based on the above push of the images within a local container image registry, edit the followings in the DaemonSet to target local container image registry:</p>
+<div class="admonition example">
+<p class="admonition-title">Connected installation</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">initContainers</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vault-agent</span><span class="w"></span>
+<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vault</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">containers</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trousseau-kms-provider</span><span class="w"></span>
+<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/ondat/trousseau:v1.1.3</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Disconnected installation</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">initContainers</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vault-agent</span><span class="w"></span>
+<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">us-central1-docker.pkg.dev/shaped-complex-318513/vault/vault:1.9.4</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">containers</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trousseau-kms-provider</span><span class="w"></span>
+<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">us-central1-docker.pkg.dev/shaped-complex-318513/ondat/trousseau:v1.1.3</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="setup-a-devtest-hashicorp-vault">Setup a dev/test HashiCorp Vault</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This HashiCorp Vault deployment is sufficent for a dev/test environment. <br />
+Latest <a href="https://learn.hashicorp.com/tutorials/vault/getting-started-dev-server?in=vault/getting-started">Getting Started</a>.</p>
+</div>
+<p>Start a dev/test Vault instance
+<div class="highlight"><pre><span></span><code>vault server -dev -dev-root-token-id<span class="o">=</span>trousseau-demo -dev-listen-address <span class="m">0</span>.0.0.0:8200 -log-level<span class="o">=</span>debug
+</code></pre></div></p>
+<p>Expected output of the console from starting HashiCorp Vault
+<div class="highlight"><pre><span></span><code>2022-03-05T10:35:10.760Z [INFO]  core.cluster-listener.tcp: starting listener: listener_address=0.0.0.0:8201
+2022-03-05T10:35:10.760Z [INFO]  core.cluster-listener: serving cluster requests: cluster_listen_address=[::]:8201
+2022-03-05T10:35:10.760Z [INFO]  core: post-unseal setup starting
+2022-03-05T10:35:10.761Z [INFO]  core: loaded wrapping token key
+2022-03-05T10:35:10.761Z [INFO]  core: successfully setup plugin catalog: plugin-directory=&quot;\&quot;\&quot;&quot;
+2022-03-05T10:35:10.762Z [INFO]  core: successfully mounted backend: type=system path=sys/
+2022-03-05T10:35:10.762Z [INFO]  core: successfully mounted backend: type=identity path=identity/
+2022-03-05T10:35:10.762Z [INFO]  core: successfully mounted backend: type=cubbyhole path=cubbyhole/
+2022-03-05T10:35:10.765Z [INFO]  core: successfully enabled credential backend: type=token path=token/
+2022-03-05T10:35:10.765Z [INFO]  rollback: starting rollback manager
+2022-03-05T10:35:10.765Z [INFO]  core: restoring leases
+2022-03-05T10:35:10.765Z [INFO]  expiration: lease restore complete
+2022-03-05T10:35:10.765Z [INFO]  identity: entities restored
+2022-03-05T10:35:10.765Z [INFO]  identity: groups restored
+2022-03-05T10:35:10.766Z [INFO]  core: post-unseal setup complete
+2022-03-05T10:35:10.766Z [INFO]  core: vault is unsealed
+2022-03-05T10:35:10.769Z [INFO]  core: successful mount: namespace=&quot;\&quot;\&quot;&quot; path=secret/ type=kv
+2022-03-05T10:35:10.779Z [INFO]  secrets.kv.kv_42530b65: collecting keys to upgrade
+2022-03-05T10:35:10.779Z [INFO]  secrets.kv.kv_42530b65: done collecting keys: num_keys=1
+2022-03-05T10:35:10.779Z [INFO]  secrets.kv.kv_42530b65: upgrading keys finished
+WARNING! dev mode is enabled! In this mode, Vault runs entirely in-memory
+and starts unsealed with a single unseal key. The root token is already
+authenticated to the CLI, so you can immediately begin using Vault.
+
+You may need to set the following environment variable:
+
+    $ export VAULT_ADDR=&#39;http://0.0.0.0:8200&#39;
+
+The unseal key and root token are displayed below in case you want to
+seal/unseal the Vault or re-authenticate.
+
+Unseal Key: 2c8NWfkyJg+J5Xg8xauuqlFVIM9XVI/R+/IG/YaBcEs=
+Root Token: trousseau-demo
+
+Development mode should NOT be used in production installations!
+</code></pre></div></p>
+<p>Export the environment variables to setup Vault
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">VAULT_NAMESPACE</span><span class="o">=</span>admin
+<span class="nb">export</span> <span class="nv">VAULT_TOKEN</span><span class="o">=</span><span class="s2">&quot;trousseau-demo&quot;</span>
+</code></pre></div></p>
+<p>Verify access to Vault instance
+<div class="highlight"><pre><span></span><code>vault status 
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>Key             Value
+---             -----
+Seal Type       shamir
+Initialized     <span class="nb">true</span>
+Sealed          <span class="nb">false</span>
+Total Shares    <span class="m">1</span>
+Threshold       <span class="m">1</span>
+Version         <span class="m">1</span>.9.3
+Storage Type    inmem
+Cluster Name    vault-cluster-caa9ea4c
+Cluster ID      701cb42f-adfc-52aa-2a5a-53776fed0138
+HA Enabled      <span class="nb">false</span>
+</code></pre></div>
+<h2 id="deploy-trousseau">Deploy Trousseau</h2>
+<p>This guide assumes the API Vault endpoint is <code>tdevhvc-01.trousseau.io</code>.</p>
+<h3 id="kubernetes-serviceaccount">Kubernetes ServiceAccount</h3>
+<p>Create ServiceAccount
+<div class="highlight"><pre><span></span><code>kubectl -n kube-system create serviceaccount trousseau-auth
+</code></pre></div></p>
+<p>Create the ServiceAccount file
+<div class="highlight"><span class="filename">trousseau-auth-serviceaccount.yaml</span><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterRoleBinding</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">   </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">role-tokenreview-binding</span><span class="w"></span>
+<span class="w">   </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kube-system</span><span class="w"></span>
+<span class="nt">roleRef</span><span class="p">:</span><span class="w"></span>
+<span class="w">   </span><span class="nt">apiGroup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io</span><span class="w"></span>
+<span class="w">   </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterRole</span><span class="w"></span>
+<span class="w">   </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">system:auth-delegator</span><span class="w"></span>
+<span class="nt">subjects</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceAccount</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trousseau-auth</span><span class="w"></span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kube-system</span><span class="w"></span>
+</code></pre></div></p>
+<p>Apply the ServiceAccount config file
+<div class="highlight"><pre><span></span><code>kubectl apply -f trousseau-auth-serviceaccount.yaml
+</code></pre></div></p>
+<h3 id="setup-vault-kubernetes-auth">Setup Vault Kubernetes Auth</h3>
+<p>Gather the Kubernetes ServiceAccount details to configure the Vault Auth for Kubernetes
+<div class="highlight"><pre><span></span><code>export VAULT_SA_NAME=$(kubectl -n kube-system get sa trousseau-auth \
+    --output jsonpath=&quot;{.secrets[*][&#39;name&#39;]}&quot;)
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>export SA_JWT_TOKEN=$(kubectl -n kube-system get secret $VAULT_SA_NAME \
+    --output &#39;go-template={{ .data.token }}&#39; | base64 --decode)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>export SA_CA_CRT=$(kubectl -n kube-system config view --raw --minify --flatten \
+    --output &#39;jsonpath={.clusters[].cluster.certificate-authority-data}&#39; | base64 --decode)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>export K8S_HOST=$(kubectl config view --raw --minify --flatten \
+    --output &#39;jsonpath={.clusters[].cluster.server}&#39;)
+</code></pre></div>
+<p>Enable Kubernetes Auth method in HashiCorp Vault
+<div class="highlight"><pre><span></span><code>vault auth enable kubernetes
+</code></pre></div></p>
+<p>Generate the command with the above gathered details</p>
+<div class="highlight"><pre><span></span><code>echo vault write auth/kubernetes/config token_reviewer_jwt=&quot;\&quot;$SA_JWT_TOKEN\&quot;&quot; kubernetes_ca_cert=&quot;\&quot;$SA_CA_CRT\&quot;&quot; issuer=&quot;\&quot;https://kubernetes.default.svc.cluster.local\&quot;&quot; kubernetes_host=&quot;\&quot;$K8S_HOST\&quot;&quot;
+</code></pre></div>
+<p>The expected output from the above <code>echo</code> is the command to run on the Vault CLI to enable the ServiceAccount to successfuly authenticate with Vault:
+<div class="highlight"><pre><span></span><code>vault write auth/kubernetes/config token_reviewer_jwt=&quot;eyJhbGciOiJSUzI1NiIsImtpZCI6ImJoOXRmMk1WaDNTN3R3V1lhZ1ZZTm1DenBXRGR3dXN3ckRuY2prSUxfUDQifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2ViudzjZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJ2YXVsdC1hdXRoLXRva2VuLWhqY2IyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6InZhdWx0LWF1dGgiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJhNWFiYjI1Ni1kNjA5LTRiMGUtYmQ4MS00Y2I3N2Q4YTRhOWUiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06dmF1bHQtYXV0aCJ9.kY2U--XAReFmcdUO-aLLiebdDsnyViPdkM3godbJGkaual_SZUIUXhjNv4adyb5UIRXsvfz_-pXR4Qnr3nv4XxGO59DTyGmStl01VTnY9knYdxZ1gh5SpezsJ5kmOy5NcsFumyCzQTpBCJKP6dXDqtGvm4XvH1Cs_f08fS9RhcZW7qRtuG2A7qqi64FayMsJlXW7y0qs_fOP92gmgpSDhTPcTzzD2XX5M_fDwj7Y-yMOSQrbaqd2kRqet9XubqcASaKwU_YWZ2BaIqX0IG3fErP1AXCg8JjEdgGkcJqF4aFU7DUMOM-Yh73FBO8Kc2WiiHGfrPMbazaXEoFOSQSuOg&quot; kubernetes_ca_cert=&quot;-----BEGIN CERTIFICATE-----
+MIIBeTCCAR+gAwIBAgJDRPNKBggqhkjOPQQDAjAkMSIwIAYDVQQDDBlya2UyLXNl
+cnZlci1jYUAxNjUxMjUxNjc1MB4XDTIyMDQyOTE3MDExNVoXDTMyMDQyNjE3MDEx
+NVowJDEiMCAGA1UEAwwZcmtlMi1zZXJ2ZXItY2FAMTY1MTI1MTY3NTBZMBMGByqG
+SM49AgEGCCqGSM49AwEHA0IABKi3hk4RAaE117QT8snLG9sFLe4s0OWLOgh+gOIs
+x7WYKi6jp+OWLjs22AbyZV8z29GseRFNGkG6ChH90ANq5oWjQjBAMA4GA1UdDwEB
+/wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBQp7m1LRyIolZUEKnDm
+uEZvo1GjwzAKBggqhkjOPQQDAgNIADBFAiBq0052efxOPwieUB3T6wA5RkVKVdDd
+ZAPi0FD2284iDQIhAJWPmpj6FixOe7I8kG0vij8rbN0N/+R8CzTrnNZ5Ioit
+-----END CERTIFICATE-----&quot; issuer=&quot;https://kubernetes.default.svc.cluster.local&quot; kubernetes_host=&quot;https://127.0.0.1:6443&quot;
+</code></pre></div></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li>requested the quotes to avoid partial writings of the configuration with Vault </li>
+<li>the <code>kubernetes_host</code> might return <code>https://127.0.0.1:6443</code> resulting to a failure when Vault will dialback to the Kubernetes cluster to do an API call for the <code>tokenreviews</code>. Export manually the external IP/FQDN Kubernetes API endpoint (like <code>export K8S_HOST=https://FQDN:6443</code>). </li>
+<li>the <code>issuer</code> could be different than <code>https://kubernetes.default.svc.cluster.local</code> when a Kubernetes cluster was set up with a custom <code>service-account-issuer</code> (see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#service-account-token-volume-projection">Kubernetes documentation</a>). <br />
+The discovery can be done following this <a href="https://www.vaultproject.io/docs/auth/kubernetes#discovering-the-service-account-issuer">HashiCorp article</a>.</li>
+</ul>
+</div>
+<h3 id="setup-vault-transit-engine">Setup Vault Transit engine</h3>
+<p>Enable and configure a Transit engine (Security team)
+<div class="highlight"><pre><span></span><code>vault secrets enable transit
+vault write -f transit/keys/trousseau-kms
+</code></pre></div></p>
+<p>Create a Transit access policy 
+<div class="highlight"><pre><span></span><code>vault policy write trousseau-transit-ro -&lt;&lt;EOF
+path &quot;transit/encrypt/trousseau-kms&quot; {
+   capabilities = [ &quot;update&quot; ]
+}
+path &quot;transit/decrypt/trousseau-kms&quot; {
+   capabilities = [ &quot;update&quot; ]
+}
+EOF
+</code></pre></div></p>
+<p>Create a dedicated Token to access the Transit engine
+<div class="highlight"><pre><span></span><code>vault token create -policy=trousseau-transit-ro
+</code></pre></div></p>
+<p>Expected output should be similar to:
+<div class="highlight"><pre><span></span><code>Key                  Value
+---                  -----
+token                hvs.CAESILoUyuj8STPYKR4AGhaCJylJbkOkmlXlU8pZukoQKc_bGh4KHGh2cy5vQkpnc2g0RVNFZEpsWTA0SWlSNDBxWDQ
+token_accessor       BBTat50bsupNqAQNLTXXRhr7
+token_duration       768h
+token_renewable      true
+token_policies       [&quot;default&quot; &quot;trousseau-transit-ro&quot;]
+identity_policies    []
+policies             [&quot;default&quot; &quot;trousseau-transit-ro&quot;]
+</code></pre></div></p>
+<p>Export the Token:
+<div class="highlight"><pre><span></span><code>export TROUSSEAU_TOKEN=&quot;hvs.CAESILoUyuj8STPYKR4AGhaCJylJbkOkmlXlU8pZukoQKc_bGh4KHGh2cy5vQkpnc2g0RVNFZEpsWTA0SWlSNDBxWDQ&quot;
+</code></pre></div></p>
+<p>Create a key-value policy store for Trousseau 
+<div class="highlight"><pre><span></span><code>vault policy write trousseau-kv-ro - &lt;&lt;EOF
+path &quot;secret/data/trousseau/*&quot; {
+    capabilities = [&quot;read&quot;, &quot;list&quot;]
+}
+EOF
+</code></pre></div></p>
+<p>Inject Trousseau configuration parameters within HashiCorp Vault key-value store 
+<div class="highlight"><pre><span></span><code>vault kv put /secret/trousseau/config transitkeyname=trousseau-kms \
+vaultaddress=$VAULT_ADDR vaulttoken=$TROUSSEAU_TOKEN \
+ ttl=30s
+</code></pre></div></p>
+<p>Create a link between the ServiceAccount, namespace, and policies in Vault
+<div class="highlight"><pre><span></span><code>vault write auth/kubernetes/role/trousseau \
+        bound_service_account_names=trousseau-auth \
+        bound_service_account_namespaces=kube-system \
+        policies=trousseau-kv-ro \
+        ttl=24h
+</code></pre></div></p>
+<h3 id="vault-agent-configmap">Vault Agent ConfigMap</h3>
+<p>Create Vault Agent ConfigMap file
+<div class="highlight"><span class="filename">vault-configmap.yaml</span><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigMap</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trousseau-vault-agent-config</span><span class="w"></span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kube-system</span><span class="w"></span>
+<span class="nt">data</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">vault-agent-config.hcl</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
+<span class="w">    </span><span class="no">exit_after_auth = true</span><span class="w"></span>
+<span class="w">    </span><span class="no">pid_file = &quot;/home/vault/pidfile&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="no">auto_auth {</span><span class="w"></span>
+<span class="w">        </span><span class="no">method &quot;kubernetes&quot; {</span><span class="w"></span>
+<span class="w">            </span><span class="no">mount_path = &quot;auth/kubernetes&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="no">config = {</span><span class="w"></span>
+<span class="w">                </span><span class="no">role = &quot;trousseau&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="no">}</span><span class="w"></span>
+<span class="w">        </span><span class="no">}</span><span class="w"></span>
+<span class="w">        </span><span class="no">sink &quot;file&quot; {</span><span class="w"></span>
+<span class="w">            </span><span class="no">config = {</span><span class="w"></span>
+<span class="w">                </span><span class="no">path = &quot;/home/vault/.vault-token&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="no">}</span><span class="w"></span>
+<span class="w">        </span><span class="no">}</span><span class="w"></span>
+<span class="w">    </span><span class="no">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="no">template {</span><span class="w"></span>
+<span class="w">    </span><span class="no">destination = &quot;/etc/secrets/config.yaml&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="no">contents = &lt;&lt;EOT</span><span class="w"></span>
+<span class="w">    </span><span class="no">{{- with secret &quot;secret/data/trousseau/config&quot; }}</span><span class="w"></span>
+<span class="w">    </span><span class="no">--- </span><span class="w"></span>
+<span class="w">    </span><span class="no">provider: vault</span><span class="w"></span>
+<span class="w">    </span><span class="no">vault:</span><span class="w"></span>
+<span class="w">      </span><span class="no">keynames:</span><span class="w"></span>
+<span class="w">      </span><span class="no">- {{ .Data.data.transitkeyname }} </span><span class="w"></span>
+<span class="w">      </span><span class="no">address: {{ .Data.data.vaultaddress }} </span><span class="w"></span>
+<span class="w">      </span><span class="no">token: {{ .Data.data.vaulttoken }} </span><span class="w"></span>
+<span class="w">    </span><span class="no">{{ end }} </span><span class="w"></span>
+<span class="w">    </span><span class="no">EOT</span><span class="w"></span>
+<span class="w">    </span><span class="no">}</span><span class="w"></span>
+</code></pre></div></p>
+<p>Apply Trousseau's ConfigMap file <code>trousseau-configmap.yaml</code>
+<div class="highlight"><pre><span></span><code>kubectl apply -f trousseau-configmap.yaml
+</code></pre></div></p>
+<h3 id="trousseau-daemonset">Trousseau DaemonSet</h3>
+<p>Create Trousseau custom DaemonSet file
+<div class="highlight"><span class="filename">trousseau-daemonset.yaml</span><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DaemonSet</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trousseau-kms-provider</span><span class="w"></span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kube-system</span><span class="w"></span>
+<span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">tier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">control-plane</span><span class="w"></span>
+<span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trousseau-kms-provider</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trousseau-kms-provider</span><span class="w"></span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trousseau-kms-provider</span><span class="w"></span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">serviceAccountName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trousseau-auth</span><span class="w"></span>
+<span class="w">      </span><span class="nt">priorityClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">system-cluster-critical</span><span class="w"></span>
+<span class="w">      </span><span class="nt">hostNetwork</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="nt">initContainers</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vault-agent</span><span class="w"></span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vault</span><span class="w">                          </span><span class="c1"># (1)</span><span class="w"></span>
+<span class="w">          </span><span class="nt">securityContext</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">          </span><span class="nt">args</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">agent</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-config=/etc/vault/vault-agent-config.hcl</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-log-level=debug</span><span class="w"></span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VAULT_ADDR</span><span class="w"></span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://FQDN:8200</span><span class="w">           </span><span class="c1"># (2)</span><span class="w"></span>
+<span class="w">          </span><span class="nt">volumeMounts</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span><span class="w"></span>
+<span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/vault</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shared-data</span><span class="w"> </span>
+<span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/secrets</span><span class="w"></span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trousseau-kms-provider</span><span class="w"></span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/ondat/trousseau:v1.1.3</span><span class="w"> </span><span class="c1"># (3)</span><span class="w"></span>
+<span class="w">          </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Always</span><span class="w"></span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span><span class="w">                        </span>
+<span class="w">            </span><span class="c1">#- name: VAULT_NAMESPACE            # (4)</span><span class="w"></span>
+<span class="w">            </span><span class="c1">#  value: admin</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VAULT_SKIP_VERIFY</span><span class="w">           </span><span class="c1"># (5)</span><span class="w"></span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="w">           </span>
+<span class="w">          </span><span class="nt">args</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-v=5</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--config-file-path=/opt/trousseau/config.yaml</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--listen-addr=unix:///opt/trousseau-kms/vaultkms.socket</span><span class="w">                            </span><span class="c1"># [REQUIRED] Version of the key to use</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--zap-encoder=json</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--v=3</span><span class="w"></span>
+<span class="w">          </span><span class="nt">securityContext</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="nt">allowPrivilegeEscalation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">            </span><span class="nt">capabilities</span><span class="p">:</span><span class="w"></span>
+<span class="w">              </span><span class="nt">drop</span><span class="p">:</span><span class="w"></span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ALL</span><span class="w"></span>
+<span class="w">            </span><span class="nt">readOnlyRootFilesystem</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">            </span><span class="nt">runAsUser</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<span class="w">          </span><span class="nt">ports</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8787</span><span class="w"></span>
+<span class="w">              </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span><span class="w"></span>
+<span class="w">          </span><span class="nt">livenessProbe</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="nt">httpGet</span><span class="p">:</span><span class="w"></span>
+<span class="w">              </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/healthz</span><span class="w"></span>
+<span class="w">              </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8787</span><span class="w"></span>
+<span class="w">            </span><span class="nt">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
+<span class="w">            </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"></span>
+<span class="w">          </span><span class="nt">resources</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="nt">requests</span><span class="p">:</span><span class="w"></span>
+<span class="w">              </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50m</span><span class="w"></span>
+<span class="w">              </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">64Mi</span><span class="w"></span>
+<span class="w">            </span><span class="nt">limits</span><span class="p">:</span><span class="w"></span>
+<span class="w">              </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">300m</span><span class="w"></span>
+<span class="w">              </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">256Mi</span><span class="w"></span>
+<span class="w">          </span><span class="nt">volumeMounts</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vault-kms</span><span class="w"></span>
+<span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/opt/trousseau-kms</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shared-data</span><span class="w"></span>
+<span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/opt/trousseau/</span><span class="w"></span>
+<span class="w">      </span><span class="nt">volumes</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trousseau-kms</span><span class="w"></span>
+<span class="w">          </span><span class="nt">hostPath</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/opt/trousseau-kms</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">configMap</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="nt">items</span><span class="p">:</span><span class="w"></span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vault-agent-config.hcl</span><span class="w"></span>
+<span class="w">                </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vault-agent-config.hcl</span><span class="w"></span>
+<span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trousseau-vault-agent-config</span><span class="w"></span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">emptyDir</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shared-data</span><span class="w"></span>
+<span class="w">      </span><span class="nt">affinity</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">nodeAffinity</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">requiredDuringSchedulingIgnoredDuringExecution</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="nt">nodeSelectorTerms</span><span class="p">:</span><span class="w"></span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matchExpressions</span><span class="p">:</span><span class="w"></span>
+<span class="w">                  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node-role.kubernetes.io/control-plane</span><span class="w"></span>
+<span class="w">                    </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exists</span><span class="w"></span>
+<span class="w">      </span><span class="nt">tolerations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node-role.kubernetes.io/control-plane</span><span class="w"></span>
+<span class="w">          </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exists</span><span class="w"></span>
+<span class="w">          </span><span class="nt">effect</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NoSchedule</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node-role.kubernetes.io/etcd</span><span class="w"></span>
+<span class="w">          </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exists</span><span class="w"></span>
+<span class="w">          </span><span class="nt">effect</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NoExecute</span><span class="w"></span>
+</code></pre></div></p>
+<ol>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> update the version to the desired version</li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> set the Vault endpoint URL up</li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> update the version to the desired version</li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> uncomment with Vault Enterprise and set a namespace in <code>value</code> parameter</li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> set to false in production with signed TLS certificate  </li>
+</ol>
+<h2 id="enable-kms-provider-plugin">Enable KMS Provider Plugin</h2>
+<h3 id="encryptionconfiguration">EncryptionConfiguration</h3>
+<p>Create the KMS provider plugin file
+<div class="highlight"><span class="filename">trousseau-encryptionconfiguration.yaml</span><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EncryptionConfiguration</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apiserver.config.k8s.io/v1</span><span class="w"></span>
+<span class="nt">resources</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">resources</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets</span><span class="w"></span>
+<span class="w">    </span><span class="nt">providers</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">kms</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vaultprovider</span><span class="w"></span>
+<span class="w">          </span><span class="nt">endpoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unix:///opt/trousseau-kms/vaultkms.socket</span><span class="w"></span>
+<span class="w">          </span><span class="nt">cachesize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">identity</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"> </span>
+</code></pre></div></p>
+<h3 id="generic">Generic</h3>
+<p>Set the <code>--encryption-provider-config</code> flag for the <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/">kube-apiserver</a> to point to the location of the configuration file.</p>
+<p>Apply Trousseau DaemonSet file <code>trousseau-configmap.yaml</code>
+<div class="highlight"><pre><span></span><code>kubectl apply -f trousseau-configmap.yaml
+</code></pre></div></p>
+<p>Verify the Trousseau's deployment status
+<div class="highlight"><pre><span></span><code>kubectl get pod -n kube-system
+</code></pre></div></p>
+<p>Restart your API server only of Trousseau is up and running for at least 60 seconds without any restart.</p>
+<h3 id="rke-2">RKE 2</h3>
+<p>Create a RKE2 config file
+<div class="highlight"><span class="filename">/etc/rancher/rke2/config.yaml</span><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">kube-apiserver-arg</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;--encryption-provider-config=/var/lib/rancher/rke2/server/cred/trousseau-encryptionconfiguration.yaml&quot;</span><span class="w"> </span>
+<span class="nt">kube-apiserver-extra-mount</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;/opt/vault-kms:/opt/vault-kms&quot;</span><span class="w"></span>
+<span class="nt">tls-san</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FQDN</span><span class="w"></span>
+</code></pre></div></p>
+<ul>
+<li>Creating the Trousseau DaemonSet file <code>trousseau-daemonset.yaml</code> in the <code>/var/lib/rancher/rke2/server/manifests/</code> folder for RKE2 to pick it up automatically.   </li>
+<li>Create the <code>trousseau-encryptionconfiguration.yaml</code> in the <code>/var/lib/rancher/rke2/server/cred/</code> folder.</li>
+<li>Verify the Trousseau's deployment status
+<div class="highlight"><pre><span></span><code>kubectl get pod -n kube-system
+</code></pre></div></li>
+<li>Restart your API server only of Trousseau is up and running for at least 60 seconds without any restart.
+<div class="highlight"><pre><span></span><code>systemctl restart rke2-server
+</code></pre></div></li>
+</ul>
+<h2 id="verify-trousseau-deployment">Verify Trousseau deployment</h2>
+<p>The below approach is to verify straight out of the ETCD instances that the secret payloads are encrypted.</p>
+<p>Create a secret
+<div class="highlight"><pre><span></span><code>kubectl create secret generic secret-post-deploy -n default --from-literal=mykey=mydata
+</code></pre></div></p>
+<p>Verify if secrets are encrypted or not. The below example points to <code>etcd-tdevk8s-01.trousseau.io</code> as one of the etcd pod name within the Kubernetes cluster.</p>
+<p>Verify the first secret <code>secret-pre-deploy</code>
+<div class="highlight"><pre><span></span><code>kubectl -n kube-system exec etcd-tdevk8s-01.trousseau.io -- sh -c &quot;ETCDCTL_ENDPOINTS=&#39;https://127.0.0.1:2379&#39; ETCDCTL_CACERT=&#39;/var/lib/rancher/rke2/server/tls/etcd/server-ca.crt&#39; ETCDCTL_CERT=&#39;/var/lib/rancher/rke2/server/tls/etcd/server-client.crt&#39; ETCDCTL_KEY=&#39;/var/lib/rancher/rke2/server/tls/etcd/server-client.key&#39; ETCDCTL_API=3 etcdctl get /registry/secrets/default/secret-pre-deploy&quot; | hexdump -C
+</code></pre></div></p>
+<p>The output should expose the Secret path with the etcd registery and the clear text key-values
+<div class="highlight"><pre><span></span><code><span class="hll">00000000  2f 72 65 67 69 73 74 72  79 2f 73 65 63 72 65 74  |/registry/secret|
+</span><span class="hll">00000010  73 2f 64 65 66 61 75 6c  74 2f 73 65 63 72 65 74  |s/default/secret|
+</span><span class="hll">00000020  2d 70 72 65 2d 64 65 70  6c 6f 79 0a 6b 38 73 00  |-pre-deploy.k8s.|
+</span><span class="hll">00000030  0a 0c 0a 02 76 31 12 06  53 65 63 72 65 74 12 d7  |....v1..Secret..|
+</span>00000040  01 0a bb 01 0a 11 73 65  63 72 65 74 2d 70 72 65  |......secret-pre|
+00000050  2d 64 65 70 6c 6f 79 12  00 1a 07 64 65 66 61 75  |-deploy....defau|
+00000060  6c 74 22 00 2a 24 62 64  32 65 30 66 62 37 2d 36  |lt&quot;.*$bd2e0fb7-6|
+00000070  37 63 62 2d 34 63 65 35  2d 61 34 39 62 2d 65 37  |7cb-4ce5-a49b-e7|
+00000080  38 65 39 30 33 65 36 65  32 38 32 00 38 00 42 08  |8e903e6e282.8.B.|
+00000090  08 a3 a8 b4 93 06 10 00  7a 00 8a 01 62 0a 0e 6b  |........z...b..k|
+000000a0  75 62 65 63 74 6c 2d 63  72 65 61 74 65 12 06 55  |ubectl-create..U|
+000000b0  70 64 61 74 65 1a 02 76  31 22 08 08 a3 a8 b4 93  |pdate..v1&quot;......|
+000000c0  06 10 00 32 08 46 69 65  6c 64 73 56 31 3a 2e 0a  |...2.FieldsV1:..|
+000000d0  2c 7b 22 66 3a 64 61 74  61 22 3a 7b 22 2e 22 3a  |,{&quot;f:data&quot;:{&quot;.&quot;:|
+000000e0  7b 7d 2c 22 66 3a 6d 79  6b 65 79 22 3a 7b 7d 7d  |{},&quot;f:mykey&quot;:{}}|
+000000f0  2c 22 66 3a 74 79 70 65  22 3a 7b 7d 7d 42 00 12  |,&quot;f:type&quot;:{}}B..|
+<span class="hll">00000100  0f 0a 05 6d 79 6b 65 79  12 06 6d 79 64 61 74 61  |...mykey..mydata|
+</span>00000110  1a 06 4f 70 61 71 75 65  1a 00 22 00 0a           |..Opaque..&quot;..|
+0000011d
+</code></pre></div></p>
+<p>Verify the first secret <code>secret-post-deploy</code>
+<div class="highlight"><pre><span></span><code>kubectl -n kube-system exec etcd-tdevk8s-01.trousseau.io -- sh -c &quot;ETCDCTL_ENDPOINTS=&#39;https://127.0.0.1:2379&#39; ETCDCTL_CACERT=&#39;/var/lib/rancher/rke2/server/tls/etcd/server-ca.crt&#39; ETCDCTL_CERT=&#39;/var/lib/rancher/rke2/server/tls/etcd/server-client.crt&#39; ETCDCTL_KEY=&#39;/var/lib/rancher/rke2/server/tls/etcd/server-client.key&#39; ETCDCTL_API=3 etcdctl get /registry/secrets/default/secret-post-deploy&quot; | hexdump -C
+</code></pre></div></p>
+<p>The output should expose a modified header and an encrypted payload
+<div class="highlight"><pre><span></span><code><span class="hll">00000000  2f 72 65 67 69 73 74 72  79 2f 73 65 63 72 65 74  |/registry/secret|
+</span><span class="hll">00000010  73 2f 64 65 66 61 75 6c  74 2f 73 65 63 72 65 74  |s/default/secret|
+</span><span class="hll">00000020  2d 70 6f 73 74 2d 64 65  70 6c 6f 79 0a 6b 38 73  |-post-deploy.k8s|
+</span><span class="hll">00000030  3a 65 6e 63 3a 6b 6d 73  3a 76 31 3a 76 61 75 6c  |:enc:kms:v1:vaul|
+</span><span class="hll">00000040  74 70 72 6f 76 69 64 65  72 3a 00 59 76 61 75 6c  |tprovider:.Yvaul|
+</span>00000050  74 3a 76 31 3a 52 2b 70  6a 65 65 7a 45 63 70 41  |t:v1:R+pjeezEcpA|
+00000060  45 4c 47 69 4e 2f 4b 42  44 54 73 68 72 79 49 76  |ELGiN/KBDTshryIv|
+00000070  55 61 75 30 2f 4a 61 75  71 34 5a 2f 66 2f 68 63  |Uau0/Jauq4Z/f/hc|
+00000080  35 50 75 4b 68 58 34 67  4e 67 54 79 43 7a 6f 69  |5PuKhX4gNgTyCzoi|
+00000090  46 55 30 55 45 54 45 36  33 70 76 51 4c 46 69 50  |FU0UETE63pvQLFiP|
+000000a0  47 79 41 4b 45 4d c3 65  18 a3 0b 93 10 43 f5 43  |GyAKEM.e.....C.C|
+000000b0  5f 1a 7c 7a 9b ba ae cf  30 55 39 77 1b b1 dc 7d  |_.|z....0U9w...}|
+000000c0  1a 74 45 d8 8e bb 7a f3  3d 75 e1 a2 4c 05 2a 01  |.tE...z.=u..L.*.|
+000000d0  22 82 70 b8 ef 17 9f 9b  e6 3a 80 60 c6 a0 fd 61  |&quot;.p......:.`...a|
+000000e0  4c 14 ac ee 1e c0 55 f5  00 df 6a 07 cf 8d 52 0a  |L.....U...j...R.|
+000000f0  79 5a 99 42 8b ea a1 f0  26 2a fd dc ae 3d 8c 2c  |yZ.B....&amp;*...=.,|
+00000100  3d 9d 03 5b 3e cc 18 f4  20 7f 6a 3d 60 9e 20 c3  |=..[&gt;... .j=`. .|
+00000110  dd cb 5b 62 90 cb 31 4c  b1 1d 1b 2a 05 cf 77 29  |..[b..1L...*..w)|
+00000120  46 39 65 f1 b0 d8 bc 3e  db 58 3c c1 23 4d 64 b5  |F9e....&gt;.X&lt;.#Md.|
+00000130  f7 88 7b 01 f2 ca 10 ec  ad 3b ec ca 73 9e ae 21  |..{......;..s..!|
+00000140  30 2a e0 ab 96 a5 65 28  fe e3 27 1e 3d 07 9e 1b  |0*....e(..&#39;.=...|
+00000150  84 8d da a9 0f 23 69 92  64 c3 b2 e6 c6 8d db 4d  |.....#i.d......M|
+00000160  0a 5e 3e e1 c7 cd 52 58  0a 6b b4 dc c4 97 10 16  |.^&gt;...RX.k......|
+00000170  09 ea 8b d6 b9 96 0d 19  60 01 ed f0 01 12 5c f1  |........`.....\.|
+00000180  68 99 d0 4b eb 3a 29 6b  ab 85 6e ae cc 22 e7 cd  |h..K.:)k..n..&quot;..|
+00000190  30 45 73 eb 1e c4 0b 67  55 ba 05 a7 2c 9e 92 97  |0Es....gU...,...|
+000001a0  11 7f 0a 9a 72 78 b6 1e  61 14 4e ee 24 7e 03 29  |....rx..a.N.$~.)|
+000001b0  85 1a 19 2c 93 0a                                 |...,..|
+000001b6
+</code></pre></div></p>
+<h2 id="replace-existing-secrets">Replace existing Secrets</h2>
+<p>The <code>secret-pre-deploy</code> was create prior to the deployment of Trousseau and is unsafe as shown within the previous section.</p>
+<p>Replace an unsafe secret with a safe one
+<div class="highlight"><pre><span></span><code>kubectl get secrets secret-pre-deploy -o json |kubectl replace -f -
+</code></pre></div></p>
+<p>Verify if the secret is now encrypted
+<div class="highlight"><pre><span></span><code>kubectl -n kube-system exec etcd-tdevk8s-01.trousseau.io -- sh -c &quot;ETCDCTL_ENDPOINTS=&#39;https://127.0.0.1:2379&#39; ETCDCTL_CACERT=&#39;/var/lib/rancher/rke2/server/tls/etcd/server-ca.crt&#39; ETCDCTL_CERT=&#39;/var/lib/rancher/rke2/server/tls/etcd/server-client.crt&#39; ETCDCTL_KEY=&#39;/var/lib/rancher/rke2/server/tls/etcd/server-client.key&#39; ETCDCTL_API=3 etcdctl get /registry/secrets/default/secret-pre-deploy&quot; | hexdump -C
+</code></pre></div></p>
+<p>The output should expose a modified header and an encrypted payload
+<div class="highlight"><pre><span></span><code><span class="hll">00000000  2f 72 65 67 69 73 74 72  79 2f 73 65 63 72 65 74  |/registry/secret|
+</span><span class="hll">00000010  73 2f 64 65 66 61 75 6c  74 2f 73 65 63 72 65 74  |s/default/secret|
+</span><span class="hll">00000020  2d 70 72 65 2d 64 65 70  6c 6f 79 0a 6b 38 73 3a  |-pre-deploy.k8s:|
+</span><span class="hll">00000030  65 6e 63 3a 6b 6d 73 3a  76 31 3a 76 61 75 6c 74  |enc:kms:v1:vault|
+</span><span class="hll">00000040  70 72 6f 76 69 64 65 72  3a 00 59 76 61 75 6c 74  |provider:.Yvault|
+</span>00000050  3a 76 31 3a 63 70 71 6f  67 55 53 79 5a 31 62 2b  |:v1:cpqogUSyZ1b+|
+00000060  30 78 7a 67 30 6b 5a 33  73 53 43 2b 6e 6e 6e 65  |0xzg0kZ3sSC+nnne|
+00000070  33 53 57 4a 78 74 34 4c  37 79 45 4e 69 77 71 4a  |3SWJxt4L7yENiwqJ|
+00000080  39 6b 54 37 47 59 70 45  30 4a 47 2f 68 66 54 4e  |9kT7GYpE0JG/hfTN|
+00000090  65 74 52 43 76 57 30 49  62 66 72 71 73 53 4c 2f  |etRCvW0IbfrqsSL/|
+000000a0  62 35 63 62 91 8b fd 7f  f4 33 84 0d fb 9f 86 1f  |b5cb.....3......|
+000000b0  c4 40 0a 9f e2 ea c8 ce  a5 21 b6 d6 a5 8b 1f 77  |.@.......!.....w|
+000000c0  35 75 df df 2f f1 99 e3  cb fb c5 24 e5 21 91 91  |5u../......$.!..|
+000000d0  99 87 8b 52 d9 6d 07 22  99 29 36 4c 5f e2 6d 58  |...R.m.&quot;.)6L_.mX|
+000000e0  a7 dc 30 67 4d d3 57 23  f9 a3 90 78 5b 28 11 ee  |..0gM.W#...x[(..|
+000000f0  0a 08 c2 00 4e af 93 85  f4 51 c8 68 9a 3a 6d 86  |....N....Q.h.:m.|
+00000100  b0 7e a3 d9 18 5d f0 fb  52 9f 30 1f 1a e0 78 32  |.~...]..R.0...x2|
+00000110  22 87 75 e5 1b 7d 8a de  3f bf f5 92 76 2f 41 41  |&quot;.u..}..?...v/AA|
+00000120  fb b8 1f 24 ec 8b 6a 30  4e 31 55 b6 b1 76 bd c3  |...$..j0N1U..v..|
+00000130  dc 7a 06 96 51 45 31 67  1b 5a c6 fc 9f 7c 81 58  |.z..QE1g.Z...|.X|
+00000140  56 83 29 dc b0 33 71 f3  c8 85 16 1f df 59 20 b5  |V.)..3q......Y .|
+00000150  28 ec e1 0f 7b ac d4 fc  7d af 51 b7 f5 6d d6 92  |(...{...}.Q..m..|
+00000160  05 4b 17 27 e2 8d 64 7a  7a 3e 16 54 65 b5 a2 fb  |.K.&#39;..dzz&gt;.Te...|
+00000170  7b 44 c4 d2 2e 7f b2 71  ea 32 19 c6 12 7e 34 b5  |{D.....q.2...~4.|
+00000180  1e f2 5b e9 ea d9 c1 9c  8b 14 56 36 f8 a9 30 c6  |..[.......V6..0.|
+00000190  39 b3 1e 14 a7 8a 79 61  85 83 a7 7f 50 57 6d 09  |9.....ya....PWm.|
+000001a0  e6 0a e2 d4 c6 56 46 14  c5 66 70 f7 36 64 b5 6f  |.....VF..fp.6d.o|
+000001b0  a0 d7 63 5a 0a                                    |..cZ.|
+000001b5
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Replace all previous secrets</p>
+<p>The above method could be used to replace all secrets created prior to Trousseau deployment by executing the following variation of the command: <br />
+<div class="highlight"><pre><span></span><code>kubectl get secrets --all-namespaces -o json | kubectl replace -f -
+</code></pre></div></p>
+</div>
+
+
+  <aside class="md-source-file">
+    
+    
+    
+    
+      <span class="md-source-file__fact">
+        <span class="md-icon" title="Contributors">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+        </span>
+        <span>GitHub</span>
+        <nav>
+          
+            <a href="#" class="md-author" title="@rovandep">
+              <img src="https://www.gravatar.com/avatar/56b03645bea43417033a191ef2682a73?d=identicon?size=72" alt="rovandep">
+            </a>
+          
+          
+          
+        </nav>
+      </span>
+    
+  </aside>
+
+
+
+
+              
+            </article>
+            
+<script>var input,hash=location.hash.slice(1);hash.startsWith("__tabbed_")&&((input=document.getElementById(hash)).checked=!0)</script>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../architecture/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Architecture" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Architecture
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../operations/" class="md-footer__link md-footer__link--next" aria-label="Next: Operations" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Operations
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 Ondat. All righ reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs Insiders
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/beezy-sh/refactored-lamp" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://storageos.slack.com/" target="_blank" rel="noopener" title="storageos.slack.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/ondat_io" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/ondat/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCWhaUE5K9RfkJVGrHys3xug" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.top"], "search": "../../assets/javascripts/workers/search.720157f5.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.2131bdac.min.js"></script>
+      
+    
+  </body>
+</html>
