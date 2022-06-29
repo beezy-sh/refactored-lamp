@@ -16,4 +16,4 @@ jobs:
       - run: pip install mkdocs-diagrams 
       - run: mkdocs gh-deploy --force
 env:
-  GH_TOKEN: ${{ github.mkdocs-material-insiders }}
+  GH_TOKEN: ${{ secrets.INSIDERS }}
